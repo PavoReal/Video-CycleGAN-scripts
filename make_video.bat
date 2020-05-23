@@ -24,9 +24,9 @@ del %INPUT_FILE%_frames_vangogh\%STYLE%\test_latest\images\*_real.png
 ffmpeg -r 24 -f image2 -i %INPUT_FILE%_frames_%STYLE%\%STYLE%\test_latest\images\frame_%%d_fake.png -vcodec libx264 %INPUT_FILE%_%STYLE%_silent.mp4
 ffmpeg -i %INPUT_FILE%_%STYLE%_silent.mp4 -i %INPUT_FILE%.mp3 %INPUT_FILE%_%STYLE%.mp4
 
-del %INPUT_FILE%_resized.mp4
-del %INPUT_FILE%_%STYLE%_silent.mp4
-del %INPUT_FILE%.mp3
+rem del %INPUT_FILE%_resized.mp4
+rem del %INPUT_FILE%_%STYLE%_silent.mp4
+rem del %INPUT_FILE%.mp3
 
-RD /S /Q %INPUT_FILE%_frames\
-RD /S /Q %INPUT_FILE%_frames_%STYLE%\
+rem RD /S /Q %INPUT_FILE%_frames\
+rem RD /S /Q %INPUT_FILE%_frames_%STYLE%\
