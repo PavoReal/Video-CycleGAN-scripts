@@ -19,7 +19,7 @@ del %INPUT_FILE%_frames_%STYLE%\%STYLE%\test_latest\images\*.png
 for /f %%A in ('dir %INPUT_FILE%_frames\ ^| find "File(s)"') do set cnt=%%A
 python test.py --dataroot %INPUT_FILE%_frames\ --results_dir %INPUT_FILE%_frames_%STYLE%\ --name %STYLE% --model test --direction BtoA --no_dropout --preprocess none --num_test %cnt%
 
-del %INPUT_FILE%_frames_vangogh\%STYLE%\test_latest\images\*_real.png
+del %INPUT_FILE%_frames_%STYLE%\%STYLE%\test_latest\images\*_real.png
 
 ffmpeg -r 24 -f image2 -i %INPUT_FILE%_frames_%STYLE%\%STYLE%\test_latest\images\frame_%%d_fake.png -vcodec libx264 %INPUT_FILE%_%STYLE%_silent.mp4
 ffmpeg -i %INPUT_FILE%_%STYLE%_silent.mp4 -i %INPUT_FILE%.mp3 %INPUT_FILE%_%STYLE%.mp4
